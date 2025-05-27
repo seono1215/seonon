@@ -1,0 +1,1041 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* 페이지 전체 배경색 */
+    color: #333;
+}
+
+/* 최상단 내비게이션 바 전체 컨테이너 */
+.main-nav-bar {
+    display: flex; /* 내부 요소들을 가로로 배치 */
+    align-items: center; /* 내부 요소들을 수직 가운데 정렬 */
+    justify-content: space-between; /* 로고 영역과 메뉴 영역을 양 끝으로 분리 */
+    background-color: gray; /* 어두운 배경색 */
+    padding: 10px 20px; /* 위아래 10px, 좌우 20px 패딩 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 (선택 사항) */
+    background-image: url(12.png); /* 이미지 경로 확인 */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 로고 이미지와 KSH 텍스트를 감싸는 영역 */
+.logo-area {
+    display: flex; /* 이미지와 텍스트를 가로로 배치 */
+    align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+}
+
+.logo-area img {
+    height: 40px; /* 로고 이미지 높이 */
+    margin-right: 10px; /* 로고와 KSH 텍스트 사이 간격 */
+    vertical-align: middle; /* 이미지와 텍스트의 기준선을 맞춤 (Flexbox에서는 덜 중요하지만 습관적으로) */
+}
+
+/* KSH 텍스트 스타일 */
+.site-title {
+    color: white; /* 텍스트 색상 */
+    font-size: 28px; /* 텍스트 크기 */
+    margin: 0; /* h2의 기본 마진 제거 */
+    font-weight: bold; /* 텍스트를 더 굵게 */
+}
+
+/* 메인 메뉴 (홈, 이력 소개 등) */
+.main-menu ul {
+    display: flex; /* 메뉴 항목들을 가로로 배치 */
+    list-style: none; /* 리스트 점 제거 */
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* 메뉴 항목들 사이의 간격 */
+}
+
+.main-menu li a {
+    color: white; /* 메뉴 텍스트 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-size: 17px;
+    font-weight: 500; /* 살짝 두껍게 */
+    transition: color 0.3s ease; /* 호버 효과 부드럽게 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.main-menu li a:hover {
+    color: #a0a0a0; /* 마우스 오버 시 색상 변경 */
+}
+
+/* 페이지 콘텐츠 영역 (내비게이션 바 아래) */
+.page-content {
+    padding: 40px 20px;
+    line-height: 1; /* 이 값은 필요에 따라 조절하세요. 다른 텍스트에 영향 줄 수 있음 */
+}
+
+.page-content h1 {
+    color: #222;
+    text-align: center;
+}
+
+/* ★★★ 기존 .img-qwer 스타일 수정 및 새로운 스타일 추가 ★★★ */
+
+/* 이미지와 텍스트 그룹을 포함하는 컨테이너: 가운데 정렬 및 반응형 조절 */
+.intro-section-container {
+    display: flex; /* 내부 요소를 플렉스로 배치 (여기서는 image-text-flex-group 하나) */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* 부모 너비 전체 사용 */
+    margin-top: 50px; /* <h1>과 <hr> 아래에 적절한 간격 */
+    margin-bottom: 50px; /* 아래 콘텐츠와 간격 */
+    /* min-height: 250px; /* 필요하다면 최소 높이 설정 */
+}
+
+/* 이미지와 텍스트를 나란히 배치할 Flexbox 그룹 */
+.image-text-flex-group {
+    display: flex;             /* 이미지와 텍스트 그룹을 가로로 나란히 */
+    align-items: center;       /* 세로 중앙 정렬 (이미지와 텍스트 그룹 높이 맞춤) */
+    gap: 200px;                 /* 이미지와 텍스트 그룹 사이의 간격 */
+    padding: 10px;             /* 내부 여백 (필요에 따라) */
+    /* background-color: lightblue; /* 레이아웃 확인용 (나중에 제거) */
+
+    /* 이 그룹이 너무 커지지 않도록 최대 너비 설정 (선택 사항) */
+    max-width: 90%; /* 화면 너비의 90%를 넘지 않도록 */
+}
+
+/* 기존 .img-qwer 스타일을 Flexbox에 맞게 수정 */
+.img-qwer {
+    /* 기존 position 속성들은 제거합니다. Flexbox가 위치를 제어합니다. */
+    /* top: 200px; */
+    /* left: 300px; */
+    /* position: relative; (선택 사항, 필요 없으면 제거) */
+
+    /* HTML에서 width/height 속성을 제거하고 CSS에서 조절하는 것이 좋습니다. */
+    width: 200px; /* 이미지의 고정 너비 (원하는 크기로 조절) */
+    /* 또는 max-width: 20vw; 로 화면 너비에 비례하게 설정할 수도 있습니다. */
+    height: auto;     /* 이미지의 가로세로 비율을 유지합니다. */
+    display: block;   /* 이미지 하단에 생길 수 있는 불필요한 여백 제거 */
+
+    /* 만약 이미지가 움직이는 애니메이션을 추가하고 싶다면 여기에 추가 */
+    /* animation: shake 1s infinite alternate; */
+}
+
+/* 안녕하세요, 환영합니다 텍스트 그룹 스타일 */
+.intro-text-group p {
+    margin: 5px 0; /* 각 p 태그의 상하 마진 조절 */
+    font-size: 1.3em; /* 텍스트 크기 조절 */
+    color: #444;
+    line-height: 1.4; /* 줄 간격 조절 */
+}
+
+/* ★★★ 반응형 웹을 위한 미디어 쿼리 (화면이 작아질 때) ★★★ */
+@media (max-width: 768px) {
+    /* 내비게이션 메뉴를 세로로 변경 (모바일 햄버거 메뉴 등에 대비) */
+    .main-nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    /* 이미지와 텍스트를 세로로 쌓기 (작은 화면에서) */
+    .image-text-flex-group {
+        flex-direction: column; /* 가로 대신 세로로 쌓기 */
+        text-align: center;     /* 텍스트도 중앙 정렬 */
+        gap: 20px;              /* 세로 간격 조절 */
+    }
+
+    .img-qwer {
+        margin-bottom: 10px; /* 이미지 아래 간격 */
+        width: 150px; /* 작은 화면에서 이미지 크기 약간 줄임 */
+    }
+
+    .intro-text-group p {
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    .page-content {
+        padding: 20px 10px; /* 작은 화면에서 패딩 줄임 */
+    }
+}
+.career-image-box img {
+    width: 100%; /* 이미지 크기 조절 (박스에 꽉 차게) */
+    height: 100%; /* 이미지 크기 조절 (박스에 꽉 차게) */
+    object-fit: cover; /* 이미지가 박스에 꽉 차게 (비율 유지, 잘릴 수 있음) */
+    display: block;
+}
+.career-image-box { /* 이미지 박스 스타일 */
+    width: 100%; /* 이미지가 카드 너비에 꽉 차도록 */
+    height: 200px; /* 이미지 박스의 고정 높이 (사진처럼 보이도록) */
+    overflow: hidden; /* 이미지가 박스를 벗어나면 숨김 */
+    display: flex; /* 이미지 정렬을 위해 Flex 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    background-color: #eee; /* 이미지 로딩 전 또는 없을 때 배경색 */
+    
+}
+.career-item {
+    background-color: white;
+    border-radius: 12px; /* 둥근 모서리 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    overflow: hidden; /* 이미지가 카드 밖으로 넘어가지 않도록 */
+    width: 300px; /* 각 카드의 고정 너비 (원하는 크기로 조절) */
+    display: flex; /* 내부 이미지 박스와 컨텐츠를 세로로 쌓기 */
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 효과 부드럽게 */
+    margin-bottom: 20px; /* 작은 화면에서 줄바꿈 시 아래 간격 */
+}
+.career-cards-container { /* Flexbox 컨테이너로 변경 */
+    display: flex;         /* 자식 요소들을 가로로 나란히 배치 */
+    justify-content: flex-end; /* ★★★ 이 부분을 이렇게 변경하세요 ★★★ */
+    align-items: flex-start; /* 카드 내부의 높이가 달라도 상단 정렬 */
+    flex-wrap: wrap;       /* 화면이 좁아지면 자동으로 다음 줄로 넘어가게 */
+    gap: 30px;             /* 카드 사이의 간격 */
+    max-width: 1200px;     /* 전체 컨테이너의 최대 너비 */
+    margin: 0 auto;
+}
+/* 기존 CSS 내용은 변경 없이 유지 */
+/* ... (맨 아래에 추가) ... */
+
+
+/* ★★★ 나의 이야기 섹션 스타일 시작 (강조된 스타일) ★★★ */
+.my-story-section {
+    padding: 80px 20px;
+    background-color: #f7f7f7; /* 배경색을 좀 더 밝고 부드러운 톤으로 변경 */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* Optional: Subtle background pattern */
+    /* background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5zM1 0h1L0 2V1z"%3E%3C/path%3E%3C/g%3E%3C/svg%3E'); */
+}
+
+.my-story-section h1 {
+    font-size: 3.2em; /* 제목 크기 더 키움 */
+    color: #2c3e50;
+    margin-bottom: 60px;
+    font-weight: 700; /* 제목 두껍게 */
+    text-transform: uppercase; /* 대문자로 변환 */
+    letter-spacing: 2px; /* 글자 간격 넓힘 */
+    position: relative; /* 밑줄/가이드라인을 위해 */
+    display: inline-block; /* 밑줄이 제목 너비만큼만 가게 */
+}
+
+.my-story-section h1::after { /* 제목 아래 강조 라인 */
+    content: '';
+    display: block;
+    width: 80px; /* 라인 길이 */
+    height: 5px; /* 라인 두께 */
+    background: linear-gradient(to right, #6a82fb, #fc5c7d); /* 그라데이션 색상 */
+    margin: 15px auto 0 auto; /* 라인 위치 */
+    border-radius: 5px;
+}
+
+
+.story-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px; /* 내용의 최대 너비 약간 넓힘 */
+    margin: 0 auto;
+    gap: 70px; /* 텍스트와 이미지 사이의 간격 더 넓힘 */
+    background-color: white;
+    padding: 50px; /* 내부 패딩 더 넓힘 */
+    border-radius: 20px; /* 모서리 더 둥글게 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* 그림자 더 선명하게 */
+    line-height: 1.7; /* 줄 간격 약간 넓힘 */
+    border: 1px solid #e0e0e0; /* 미묘한 테두리 추가 */
+    overflow: hidden; /* 내부 요소가 넘치지 않도록 */
+}
+
+.story-text {
+    flex: 2;
+    text-align: left;
+    color: #333; /* 텍스트 색상 좀 더 진하게 */
+    padding-right: 20px; /* 이미지와의 간격 확보 */
+}
+
+.story-text h2 {
+    font-size: 2.5em; /* 소제목 크기 키움 */
+    color: #4a69bd; /* 소제목 색상 변경 */
+    margin-bottom: 25px;
+    font-weight: 600; /* 소제목 두껍게 */
+    line-height: 1.3;
+}
+
+.story-text p {
+    font-size: 1.15em; /* 본문 글자 크기 약간 키움 */
+    margin-bottom: 20px; /* 단락 간격 넓힘 */
+    line-height: 1.8; /* 줄 간격 더 넓힘 */
+    text-align: justify; /* 양쪽 정렬 (단락 끝이 들쑥날쑥하지 않게) */
+}
+
+.story-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px; /* 이미지 박스 최소 너비 약간 키움 */
+    position: relative; /* 이미지에 오버레이 효과 등을 위해 */
+}
+
+.story-image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* 이미지 둥근 모서리 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 이미지에도 그림자 */
+    transition: transform 0.3s ease; /* 호버 효과 */
+}
+
+.story-image-box img:hover {
+    transform: scale(1.03); /* 호버 시 약간 확대 */
+}
+
+/* ★★★ 나의 이야기 섹션 반응형 웹을 위한 미디어 쿼리 (수정) ★★★ */
+@media (max-width: 900px) {
+    .story-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px; /* 세로 간격 조절 */
+        padding: 40px;
+    }
+
+    .story-text {
+        text-align: center; /* 텍스트 중앙 정렬 */
+        padding-right: 0; /* 패딩 제거 */
+    }
+
+    .story-text p {
+        text-align: left; /* 작은 화면에서 단락은 왼쪽 정렬이 더 읽기 편할 수 있음. 필요 시 center로 변경 */
+    }
+
+    .story-image-box {
+        order: -1;
+        max-width: 70%; /* 작은 화면에서 이미지 크기 조절 */
+    }
+}
+
+@media (max-width: 600px) {
+    .my-story-section {
+        padding: 60px 15px;
+    }
+    .my-story-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+    .my-story-section h1::after {
+        width: 60px;
+        height: 4px;
+        margin-top: 10px;
+    }
+    .story-content-wrapper {
+        padding: 25px;
+        gap: 25px;
+    }
+    .story-text h2 {
+        font-size: 2em;
+    }
+    .story-text p {
+        font-size: 1em;
+    }
+    .story-image-box {
+        min-width: unset; /* 최소 너비 제한 해제 */
+        max-width: 90%;
+    }
+}
+
+
+
+/* ★★★ 연락처 섹션 스타일 시작 (강조된 스타일) ★★★ */
+.contact-section {
+    padding: 100px 20px; /* 상하 패딩 더 넓힘 */
+    
+    text-align: center;
+    margin-top: 50px;
+    position: relative; /* 배경 효과를 위해 */
+    overflow: hidden; /* 배경이 넘치지 않도록 */
+}
+
+/* 배경에 은은한 도형 효과 추가 (선택 사항, 필요 없으면 제거) */
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(106, 130, 251, 0.1); /* 연한 푸른색 */
+    border-radius: 50%;
+    filter: blur(80px); /* 부드럽게 번지는 효과 */
+    z-index: 0;
+}
+.contact-section::after {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    right: -70px;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(252, 92, 125, 0.1); /* 연한 분홍색 */
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+}
+
+
+.contact-section h1 {
+    font-size: 3.5em; /* 제목 크기 더 크게 */
+    color: #1a2c3d; /* 더 진한 색상 */
+    margin-bottom: 70px; /* 제목과 내용 사이 간격 더 넓힘 */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* 글자 간격 더 넓힘 */
+    position: relative;
+    display: inline-block;
+    z-index: 1; /* 다른 요소 위에 오도록 */
+}
+
+.contact-section h1::after {
+    content: '';
+    display: block;
+    width: 100px; /* 라인 길이 더 길게 */
+    height: 6px; /* 라인 두께 더 두껍게 */
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+    margin: 20px auto 0 auto; /* 라인 위치 조정 */
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.contact-intro {
+    font-size: 1.3em; /* 글자 크기 키움 */
+    color: #444; /* 색상 진하게 */
+    max-width: 800px; /* 너비 넓힘 */
+    margin: 0 auto 60px auto; /* 중앙 정렬 및 아래 간격 */
+    line-height: 1.8; /* 줄 간격 넓힘 */
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* 항목들 간의 간격 */
+    max-width: 1100px; /* 전체 컨테이너 너비 넓힘 */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-method-item {
+    background-color: white;
+    border-radius: 20px; /* 모서리 더 둥글게 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 그림자 더 선명하게 */
+    padding: 40px 30px; /* 내부 패딩 조절 */
+    width: 300px; /* 각 항목의 고정 너비 약간 넓힘 */
+    text-align: center;
+    transition: all 0.3s ease; /* 모든 속성에 트랜지션 적용 */
+    border: none; /* 테두리 제거 (그림자 효과로 대체) */
+    position: relative;
+    overflow: hidden; /* 내부 호버 효과를 위해 */
+}
+
+/* 카드 아이콘 배경 효과 */
+.contact-method-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #6a82fb, #fc5c7d);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.contact-method-item:hover::before {
+    opacity: 1; /* 호버 시 배경 나타남 */
+}
+
+.contact-method-item:hover {
+    transform: translateY(-12px) scale(1.02); /* 호버 시 더 크게, 더 많이 올라옴 */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 더 진하게 */
+    color: white; /* 텍스트 색상 변경 (아래 개별 요소에서 다시 정의) */
+}
+
+.contact-method-item i {
+    font-size: 4em; /* 아이콘 크기 더 크게 */
+    color: #007bff; /* 기본 아이콘 색상 */
+    margin-bottom: 25px;
+    transition: color 0.3s ease; /* 아이콘 색상 변화 트랜지션 */
+}
+
+.contact-method-item:hover i {
+    color: white; /* 호버 시 아이콘 색상 흰색으로 변경 */
+}
+
+.contact-method-item h3 {
+    font-size: 1.8em; /* 제목 크기 더 크게 */
+    color: #333;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.contact-method-item:hover h3 {
+    color: white; /* 호버 시 제목 색상 흰색으로 변경 */
+}
+
+.contact-method-item p {
+    font-size: 1.1em;
+    color: #666;
+    word-break: break-all;
+    transition: color 0.3s ease;
+}
+
+.contact-method-item:hover p {
+    color: #f0f0f0; /* 호버 시 본문 텍스트 색상 연하게 */
+}
+
+.contact-method-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600; /* 더 두껍게 */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-method-item:hover a {
+    color: white; /* 호버 시 링크 색상 흰색으로 변경 */
+    text-decoration: underline;
+}
+
+/* 푸터 스타일 (기존 위치 그대로) */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #a0a0a0;
+}
+
+
+/* ★★★ 연락처 섹션 반응형 웹을 위한 미디어 쿼리 (수정) ★★★ */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 15px; /* 작은 화면 패딩 조절 */
+    }
+    /* 배경 도형 위치 조정 */
+    .contact-section::before {
+        top: -20px; left: -20px;
+        width: 150px; height: 150px;
+        filter: blur(60px);
+    }
+    .contact-section::after {
+        bottom: -30px; right: -30px;
+        width: 180px; height: 180px;
+        filter: blur(70px);
+    }
+
+    .contact-section h1 {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+    .contact-section h1::after {
+        width: 80px;
+        height: 5px;
+        margin-top: 15px;
+    }
+    .contact-intro {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .contact-info-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* 세로 간격 조절 */
+    }
+    .contact-method-item {
+        width: 90%;
+        max-width: 320px; /* 카드 최대 너비 조절 */
+        padding: 30px 20px;
+    }
+    .contact-method-item i {
+        font-size: 3em;
+    }
+    .contact-method-item h3 {
+        font-size: 1.6em;
+    }
+    .contact-method-item p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 60px 10px;
+    }
+    .contact-section h1 {
+        font-size: 2.2em;
+    }
+    .contact-intro {
+        font-size: 0.95em;
+    }
+    .contact-method-item {
+        padding: 25px 15px;
+    }
+}
+/* ==================================================================== */
+/* 1. 전역 스타일 (Global Styles) */
+/* ==================================================================== */
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 구글 폰트 적용 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩, 보더가 너비/높이에 포함되도록 */
+    background-color: #f8f9fa; /* 전체 페이지 배경색 */
+    color: #333; /* 기본 텍스트 색상 */
+    line-height: 1.6;
+    scroll-behavior: smooth; /* 스크롤 부드럽게 */
+}
+
+/* 모든 HTML 요소에 box-sizing 적용 */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* 링크 기본 스타일 제거 */
+a {
+    text-decoration: none;
+    color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+}
+
+
+/* ==================================================================== */
+/* 2. 헤더 (Navigation Bar) 스타일 */
+/* ==================================================================== */
+.main-nav-bar {
+    background-color: white;
+    padding: 15px 30px; /* 패딩 조절 */
+    display: flex;
+    justify-content: space-between; /* 로고와 메뉴를 양쪽으로 벌림 */
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* 그림자 진하게 */
+    position: sticky; /* 스크롤 시 상단에 고정 */
+    top: 0;
+    z-index: 1000; /* 다른 요소 위에 오도록 */
+    width: 100%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-area img {
+    height: 40px; /* 로고 이미지 크기 조절 */
+    margin-right: 10px;
+    border-radius: 8px; /* 로고도 둥글게 */
+}
+
+.site-title {
+    font-size: 1.8em; /* 로고 텍스트 크기 */
+    color: #34495e; /* 로고 색상 */
+    font-weight: 700;
+    margin: 0;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-menu ul li {
+    margin-left: 30px; /* 메뉴 항목 간 간격 */
+}
+
+.main-menu ul li a {
+    color: #555; /* 메뉴 텍스트 색상 */
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative; /* 밑줄 효과를 위해 */
+    transition: color 0.3s ease;
+}
+
+.main-menu ul li a::after { /* 메뉴 항목 호버 시 밑줄 효과 */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #6a82fb; /* 강조 색상 */
+    transition: width 0.3s ease;
+}
+
+.main-menu ul li a:hover {
+    color: #6a82fb; /* 호버 시 색상 변경 */
+}
+
+.main-menu ul li a:hover::after {
+    width: 100%; /* 호버 시 밑줄 나타남 */
+}
+
+/* ==================================================================== */
+/* 3. 페이지 콘텐츠 래퍼 (각 섹션 감싸는 부분) */
+/* ==================================================================== */
+.page-content {
+    /* hero-section은 full width이므로 page-content는 hero-section 다음에 시작 */
+    /* 전반적인 콘텐츠의 좌우 마진을 여기서 통제 */
+    max-width: 1200px; /* 페이지 콘텐츠 최대 너비 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 0 20px; /* 좌우 패딩 */
+}
+
+
+/* ==================================================================== */
+/* 4. Hero Section (홈 섹션) - 기존 스타일 유지 (혹시 수정된 부분 있다면 병합) */
+/* ==================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    /* background: linear-gradient(135deg, #6a82fb, #fc5c7d); */ /* 이미지 없으면 이거 사용 */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s forwards ease-out 0.5s;
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title .highlight {
+    color: #ffd700;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================================================== */
+/* 5. 각 섹션 공통 제목 스타일 (h1) - 필요시 섹션별로 오버라이드 가능 */
+/* ==================================================================== */
+section h1 {
+    font-size: 3.2em; /* 모든 섹션 제목에 통일된 크기 */
+    color: #2c3e50; /* 진한 색상 */
+    margin-bottom: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    z-index: 1; /* 다른 요소 위에 오도록 */
+    text-align: center; /* 섹션 제목은 기본 중앙 정렬 */
+}
+
+section h1::after { /* 제목 아래 강조 라인 */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+    margin: 15px auto 0 auto;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* ==================================================================== */
+/* 6. Career Section (이력 소개) - 기존 스타일 유지 */
+/* ==================================================================== */
+.career-section {
+    padding: 80px 20px; /* 패딩 조절 */
+    background-color: #fcfcfc;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ... 나머지 career-section 관련 스타일 유지 ... */
+
+
+/* ==================================================================== */
+/* 7. My Story Section (나의 이야기) - 기존 스타일 유지 */
+/* ==================================================================== */
+.my-story-section {
+    padding: 80px 20px;
+    background-color: #eef4f7;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* ... 나머지 my-story-section 관련 스타일 유지 ... */
+
+
+/* ==================================================================== */
+/* 8. Contact Section (연락처) - 기존 스타일 유지 (배경 도형 삭제 반영) */
+/* ==================================================================== */
+.contact-section {
+    padding: 100px 20px;
+    background-color: #e0f2f7;
+    text-align: center;
+    margin-top: 50px;
+    /* position: relative; /* 배경 도형 삭제로 이 속성들은 필수는 아니지만, 유지해도 무방 */
+    /* overflow: hidden; */
+}
+/* .contact-section::before 및 ::after 스타일은 삭제되었음 */
+
+/* ... 나머지 contact-section 관련 스타일 유지 ... */
+
+
+/* ==================================================================== */
+/* 9. 푸터 (Footer) 스타일 */
+/* ==================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px; /* 패딩 조절 */
+    background-color: #2c3e50; /* 진한 배경색 */
+    color: white;
+    margin-top: 80px; /* 위 섹션과의 간격 더 넓힘 */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+footer p {
+    margin: 0 0 20px 0;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8em; /* 아이콘 크기 키움 */
+    margin: 0 15px; /* 아이콘 간격 넓힘 */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #6a82fb; /* 호버 시 강조색으로 변경 */
+    transform: translateY(-3px); /* 호버 시 살짝 올라옴 */
+}
+
+
+/* ==================================================================== */
+/* 10. 전반적인 반응형 웹 (Responsive Design) */
+/* ==================================================================== */
+@media (max-width: 992px) {
+    /* 헤더 */
+    .main-nav-bar {
+        padding: 15px 20px;
+    }
+    .main-menu ul li {
+        margin-left: 20px;
+    }
+    .main-menu ul li a {
+        font-size: 1em;
+    }
+
+    /* Hero Section (기존 유지) */
+    /* ... */
+
+    /* 페이지 콘텐츠 패딩 */
+    .page-content {
+        padding: 0 15px;
+    }
+
+    /* 섹션 제목 */
+    section h1 {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+        letter-spacing: 1.5px;
+    }
+    section h1::after {
+        width: 70px;
+        height: 4px;
+        margin-top: 12px;
+    }
+
+    /* 푸터 */
+    footer {
+        padding: 30px 15px;
+        margin-top: 60px;
+    }
+    .social-links a {
+        font-size: 1.6em;
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 헤더 (모바일 메뉴 전환을 위한 추가 CSS 필요, 여기서는 기본 스타일만) */
+    .main-nav-bar {
+        flex-direction: column; /* 로고와 메뉴 세로로 쌓기 */
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    .main-menu {
+        margin-top: 15px;
+        width: 100%; /* 메뉴가 가로를 꽉 채우도록 */
+    }
+    .main-menu ul {
+        flex-direction: column; /* 메뉴 항목 세로로 쌓기 */
+        align-items: center;
+    }
+    .main-menu ul li {
+        margin: 10px 0; /* 세로 간격 조절 */
+    }
+    .main-menu ul li a {
+        font-size: 1.1em; /* 메뉴 항목 크기 유지 */
+    }
+    .main-menu ul li a::after { /* 모바일에서는 밑줄 제거하거나 다르게 표현 */
+        display: none;
+    }
+
+    /* Hero Section (기존 유지) */
+    /* ... */
+
+    /* 페이지 콘텐츠 패딩 */
+    .page-content {
+        padding: 0 10px;
+    }
+
+    /* 섹션 제목 */
+    section h1 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+    section h1::after {
+        width: 60px;
+        height: 3px;
+        margin-top: 10px;
+    }
+
+    /* 푸터 */
+    footer {
+        margin-top: 50px;
+    }
+    .social-links a {
+        font-size: 1.4em;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero Section (기존 유지) */
+    /* ... */
+
+    /* 푸터 */
+    footer p {
+        font-size: 0.85em;
+    }
+    .social-links a {
+        font-size: 1.2em;
+    }
+}
